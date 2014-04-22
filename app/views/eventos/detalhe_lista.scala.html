@@ -1,0 +1,29 @@
+@(evento:Evento)
+<div class="evento clearfix" id="evento_@evento.getId()">
+  <div class="data">
+    @if(evento.taRolando()){
+      <p>@Calendar.getInstance().dayAsNumber</p>      
+    }else {
+      <p>@evento.getDataDeInicio().dayAsNumber</p>      			
+    }
+    <small>@evento.getDataDeInicio().monthAsString</small>
+  </div><!-- fim class="data" -->
+
+  @if(evento.temLogo()){
+    <div class="logo_img clearfix">
+      <img src="@routes.Assets.at("images/destaques/@evento.getCaminhoImagem()")"/> 
+    </div>
+  }else{ 
+    <div class="logo clearfix">  </div>
+  }
+
+  <div class="info">
+    <p id="evento"><a href="">Mais informações</a></p>
+    <small></small><br/>
+
+    <p class="tags">
+    </p>
+    <br/>
+  </div>
+  
+</div>

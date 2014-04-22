@@ -1,0 +1,13 @@
+@import helper._
+<html>
+	<body>
+	@form(admin.routes.UsuariosController.cria()) {
+        
+        Email <input type="text" name="email"/><br/>
+        Senha <input type="password" name="senha"/><br/>
+                 
+        <input type="submit" value="Novo usuário">
+        
+    }
+	</body>
+</html>

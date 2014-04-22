@@ -1,0 +1,27 @@
+@(usuarioForm:DynamicForm)
+@import helper._
+<html>
+	<body>
+
+	@if(usuarioForm.hasGlobalErrors) {
+	    <p class="error">
+	        @usuarioForm.globalError.message
+	    </p>
+	}
+	
+	@if(flash().get("nao_logado")!=null){
+		<p class="error">
+	        @flash().get("nao_logado")
+	    </p>
+	}
+		
+	
+	@form(routes.LoginController.loga()) {
+        
+        @inputText(usuarioForm("email"))
+        @inputPassword(usuarioForm("senha"))         
+        <input type="submit" value="Login">
+        
+    }
+	</body>
+</html>

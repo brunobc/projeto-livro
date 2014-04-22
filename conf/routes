@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.EventosController.lista()
+#GET     /eventos/:pagina            controllers.EventosController.listaPaginado(pagina:Integer)
+#GET     /eventos                    controllers.EventosController.lista()
+GET 	/eventos/:id<[0-9]+>				controllers.EventosController.visualiza(id:Integer)
+GET		/eventos/novo				controllers.EventosController.novo()
+POST	/eventos					controllers.EventosController.cria()
+GET		/eventos/admin				controllers.admin.TodosEventosController.todos()
+GET 	/evento/admin/aprova/:id	controllers.admin.TodosEventosController.aprova(id:Integer)
+GET 	/cache/invalida				controllers.CacheController.invalidate()
+GET 	/login						controllers.LoginController.form()
+POST 	/login						controllers.LoginController.loga()
+GET 	/logout						controllers.LoginController.logout()
+GET 	/usuarios/759846784936534 	controllers.admin.UsuariosController.form()
+POST 	/usuarios/759846784936534 	controllers.admin.UsuariosController.cria()
+GET 	/idioma						controllers.CookieLang.mudaIdioma()
+GET 	/idioma/limpa				controllers.CookieLang.limpaIdioma()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

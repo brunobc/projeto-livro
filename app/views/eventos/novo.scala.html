@@ -1,0 +1,27 @@
+@(eventoForm:Form[Evento])
+@import helper._
+<html>
+	<body>
+	@form(routes.EventosController.cria(),'enctype -> "multipart/form-data") {
+        
+        @inputText(eventoForm("nome"))
+        @inputText(eventoForm("emailParaContato"))         
+        @textarea(eventoForm("descricao"))
+        <select name="estado">
+        	@for(estado <- Estado.values) {
+        		<option value="@estado.name">@estado.name</option>
+        	}
+        </select>         
+        @inputText(eventoForm("site")) 
+        @inputText(eventoForm("twitter"))
+        <fieldset> 
+        	<legend>Periodo</legend>
+	        @inputDate(eventoForm("dataDeInicio"))
+	        @inputDate(eventoForm("dataDeFim")) 
+        </fieldset> 
+		@inputFile(eventoForm("destaque"))
+        <input type="submit" value="Novo evento">
+        
+    }
+	</body>
+</html>

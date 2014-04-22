@@ -1,0 +1,13 @@
+@(eventos:List[Evento])
+
+@main {
+		@if(flash().get("sucesso")!=null){
+			<span class="msg_sucesso">@flash().get("sucesso")</span>
+		}
+		<ul>
+			@for(evento <- eventos) {
+				@detalhe_lista(evento)	
+			}
+		</ul>
+
+}

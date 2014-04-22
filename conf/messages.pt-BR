@@ -1,0 +1,9 @@
+validations.FromNow = 
+error.frowNow = A data não foi preenchida corretamente
+constraint.email = O email deve ser válido, na moral
+constraint.required = Preenchimento obrigatório
+org.hibernate.validator.constraints.NotBlank.message = Tem que preencher
+error.required = O campo não foi preenchido
+sobre = Sobre
+idioma.pt_br = Português
+idioma.en_us = Inglês
